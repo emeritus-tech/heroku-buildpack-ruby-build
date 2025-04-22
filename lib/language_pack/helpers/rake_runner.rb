@@ -43,7 +43,7 @@ class LanguagePack::Helpers::RakeRunner
     def invoke(options = {})
       options      = @default_options.merge(options)
       quiet_option = options.delete(:quiet)
-
+      puts "options: #{options}"
       puts "Running: rake #{task}" unless quiet_option
       time = Benchmark.realtime do
         cmd = "rake #{task}"
