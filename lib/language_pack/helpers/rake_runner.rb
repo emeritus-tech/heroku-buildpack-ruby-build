@@ -44,7 +44,6 @@ class LanguagePack::Helpers::RakeRunner
       options      = @default_options.merge(options)
       options[:env] = (options[:env] || {}).merge("HEROKU_BUILD_SKIP_APPLICATION_EAGER_LOAD" => "true")
       quiet_option = options.delete(:quiet)
-      puts "options: #{options}"
       puts "Running: rake #{task}" unless quiet_option
       time = Benchmark.realtime do
         cmd = "rake #{task}"
